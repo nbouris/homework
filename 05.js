@@ -9,24 +9,23 @@
  * > I am a pro :D
  */
 
-function learnJS(done) {
-  setTimeout(() => {
-    done('I know JS!')
-  }, 2000)
-}
+ function learnJS(done) {
+   setTimeout(() => {
+     done('I know JS!')
+   }, Math.random() * 1000)
+ }
 
-function buildAWebsite(done) {
-  setTimeout(() => {
-    done('I am a pro :D')
-  }, 4000)
-}
+ function buildAWebsite(done) {
+   setTimeout(() => {
+     done('I am a pro :D')
+   }, Math.random() * 1000)
+ }
 
-learnJS((message) => {
-  console.log(message)
-});
+ learnJS((jsMessage) => {
+   console.log(jsMessage)
+     buildAWebsite((proMessage) => {
+       console.log(proMessage)
+     })
+ })
 
-buildAWebsite((message2) => {
-  console.log(message2)
-});
-
-console.log('I signed up for JS1')
+ console.log('I signed up for JS1')

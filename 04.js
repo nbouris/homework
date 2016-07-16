@@ -7,34 +7,23 @@
  * > I'm ready
  * > Riding the waves!
  */
-
-
- function bigWaves(done) {
+ function goSurfing(done) {
    setTimeout(() => {
-     done('Big waves today')
-   }, 3000)
+     done('Riding the waves!')
+   }, Math.random() * 300)
  }
 
  function warmUp(done) {
    setTimeout(() => {
      done("I'm ready")
-   }, 6000)
+   }, Math.random() * 300)
  }
 
-function goSurfing(done) {
-  setTimeout(() => {
-    done('Riding the waves!')
-  }, 9000)
-}
+ warmUp((warmUpMessage) => {
+   console.log(warmUpMessage)
+     goSurfing((surfMessage) => {
+       console.log(surfMessage)
+     })
+ })
 
-bigWaves((wavesMessage) => {
-  console.log(wavesMessage)
-});
-
-warmUp((warmUpMessage) => {
-  console.log(warmUpMessage)
-});
-
-goSurfing((message1) => {
-  console.log(message1)
-});
+ console.log('Big waves today')
